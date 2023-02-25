@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+<h3>Cписок клиентов</h3>
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">фио</th>
+      <th scope="col">дата рождения</th>
+      <th scope="col">пол</th>
+      <th scope="col">номер телефона</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for client in clients%}
+    <tr>
+      <th scope="row">{{client.id}}</th>
+      <th scope="row">{{client.fio}}</th>
+      <th scope="row">{{client.birth_date}}</th>
+      <th scope="row">{{client.gender}}</th>
+      <th scope="row">{{client.phone_num}}</th>
+
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+    </div>
+{%endblock content%}

@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container">
+
+    <form method="POST">
+        {{form.csrf_token}}
+        {%for field in form%}
+  <div class="form-group">
+  {% if field.widget.input_type!='hidden'%}
+      {{field.label}}
+      {%endif%}
+      {%if not field.errors%}
+    {{field(class="form-control")}}
+     {%else%}
+          {{field(class="form-control is-invalid")}}
+      {%for error in field.errors%}
+    <div class="invalid-feedback">
+       {{error}}
+</div>
+    {%endfor%}
+      {%endif%}
+  </div>
+        {%endfor%}
+
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+
+
+</div>
+
+{%endblock content%}

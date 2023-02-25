@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="container">
+<h3>Cписок категорий</h3>
+
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">фио</th>
+      <th scope="col">дата рождения</th>
+      <th scope="col">специализация</th>
+      <th scope="col">стаж</th>
+    </tr>
+  </thead>
+  <tbody>
+  {%for doctor in doctors%}
+    <tr>
+      <th scope="row">{{doctor.id}}</th>
+      <td>{{doctor.fio}}</td>
+      <td>{{doctor.birth_date}}</td>
+      <td>{{doctor.position}}</td>
+      <td>{{doctor.experience}}</td>
+    </tr>
+  {%endfor%}
+  </tbody>
+</table>
+    </div>
+{%endblock content%}
